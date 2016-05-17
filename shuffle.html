@@ -1,0 +1,28 @@
+<html> 
+<head>
+	<meta charset = "UTF-8">
+	<title>Sắp xếp trộn</title>
+</head>
+<body>
+	<input type = "text" id = "n">
+	<input type = "button" value = "Random" onclick = "random()">
+	<div id = "show"></div>
+</body>
+<script type="text/javascript">
+	function random () {
+		var n = document.getElementById("n").value;
+		var array = new Array;
+		for (var i = 1; i <= n; i++) {
+			array.push(i);
+		}
+		for (i = array.length - 1; i > 0; i--) {
+			j = Math.floor(Math.random() * (i + 1));
+			var tmp = array[i];
+			array[i] = array[j];
+			array[j] = tmp;
+		};
+		array.toString();
+		document.getElementById("show").innerHTML = array;
+	}
+</script>
+</html>
